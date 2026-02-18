@@ -5,10 +5,10 @@
 @push('styles')
 <style>
     .menu-hero {
-        background: linear-gradient(120deg, rgba(61,41,20,0.9) 0%, rgba(92,64,51,0.8) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat;
+        background: linear-gradient(120deg, rgba(74,48,32,0.9) 0%, rgba(125,94,69,0.82) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat;
         padding: 3rem 1.5rem;
         text-align: center;
-        color: #faf6f0;
+        color: var(--cream);
     }
     .menu-hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
     .menu-hero p { opacity: 0.9; }
@@ -34,11 +34,11 @@
         background: #fff;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 2px 12px rgba(61,41,20,0.06);
+        box-shadow: 0 2px 12px rgba(74,48,32,0.06);
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        border: 1px solid rgba(92,64,51,0.06);
+        border: 1px solid rgba(125,94,69,0.08);
     }
-    .menu-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,41,20,0.1); border-color: rgba(212,175,55,0.2); }
+    .menu-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,48,32,0.1); border-color: rgba(212,168,74,0.25); }
     .menu-card img {
         width: 100%;
         height: 180px;
@@ -66,7 +66,7 @@
         font-weight: 600;
         transition: background 0.25s ease, box-shadow 0.25s ease;
     }
-    .menu-card .btn-pedir:hover { background: var(--wood); box-shadow: 0 2px 10px rgba(61,41,20,0.25); }
+    .menu-card .btn-pedir:hover { background: var(--wood); box-shadow: 0 2px 10px rgba(74,48,32,0.25); }
     .menu-card .btn-pedir { min-height: 44px; display: inline-flex; align-items: center; }
 
     @media (max-width: 768px) {
@@ -215,7 +215,7 @@
         </section>
     </div>
 
-    <section class="cta-block" style="background: linear-gradient(135deg, var(--wood-dark) 0%, var(--wood) 100%); color: #f4e4bc; text-align: center; padding: 2.5rem;">
+    <section class="cta-block" style="background: linear-gradient(135deg, var(--wood-dark) 0%, var(--wood) 100%); color: var(--gold-pale); text-align: center; padding: 2.5rem;">
         <div class="container">
             <p style="margin-bottom: 1rem;">¿Listo para ordenar? Escríbenos por WhatsApp con tu pedido.</p>
             <a href="https://wa.me/573172479723?text=Hola%20Pikaditos,%20quiero%20hacer%20un%20pedido" class="btn btn-primary" target="_blank" rel="noopener">Ordenar por WhatsApp</a>

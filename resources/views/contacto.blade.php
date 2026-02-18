@@ -5,10 +5,10 @@
 @push('styles')
 <style>
     .contact-hero {
-        background: linear-gradient(120deg, rgba(61,41,20,0.88) 0%, rgba(92,64,51,0.82) 100%), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
+        background: linear-gradient(120deg, rgba(74,48,32,0.88) 0%, rgba(125,94,69,0.82) 100%), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
         padding: 2.5rem 1.5rem;
         text-align: center;
-        color: #faf6f0;
+        color: var(--cream);
     }
     .contact-hero h1 { font-size: 2.25rem; margin-bottom: 0.5rem; }
     .contact-hero p { opacity: 0.9; }
@@ -52,8 +52,8 @@
         background: #fff;
         padding: 2rem;
         border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(61,41,20,0.08);
-        border: 1px solid rgba(212,175,55,0.1);
+        box-shadow: 0 4px 20px rgba(74,48,32,0.08);
+        border: 1px solid rgba(212,168,74,0.12);
     }
     .form-box h3 { font-family: 'Cormorant Garamond', serif; color: var(--wood-dark); margin-bottom: 1.25rem; font-size: 1.35rem; }
     .form-group { margin-bottom: 1.25rem; }
@@ -97,7 +97,7 @@
         margin-top: 2rem;
         border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(61,41,20,0.08);
+        box-shadow: 0 4px 20px rgba(74,48,32,0.08);
     }
     .map-wrap iframe { width: 100%; height: 280px; border: 0; display: block; }
 </style>

@@ -6,42 +6,43 @@
     <meta name="description" content="Pikaditos - Comida rápida con sabor casero. Menú, promociones y delivery.">
     <title>@yield('title', 'Pikaditos') — Comida rápida</title>
     {{-- Favicon temporal (P de Pikaditos). Cuando tengas el logo del negocio, reemplaza por: <link rel="icon" href="{{ asset('favicon.ico') }}"> --}}
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%235c4033' rx='4'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23d4af37' font-family='Georgia' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%237d5e45' rx='4'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23d4a84a' font-family='Georgia' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --wood-dark: #3d2914;
-            --wood: #5c4033;
-            --wood-light: #8b6914;
-            --wood-bg: #f5ebe0;
-            --gold: #b8860b;
-            --gold-light: #d4af37;
-            --gold-pale: #f4e4bc;
-            --cream: #faf6f0;
-            --text: #2c1810;
-            --text-muted: #6b5344;
+            /* Paleta amaderada tipo caramelo (más dorada) */
+            --wood-dark: #5a3723;
+            --wood: #8b5e3c;
+            --wood-light: #c08a4a;
+            --wood-bg: #f3e1cf;
+            --gold: #d79a32;
+            --gold-light: #e2b74d;
+            --gold-pale: #f8e6bf;
+            --cream: #fdf5e9;
+            --text: #3c2817;
+            --text-muted: #836950;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Source Sans 3', sans-serif;
             color: var(--text);
-            background: linear-gradient(180deg, #fdfbf8 0%, var(--cream) 100%);
+            background: linear-gradient(180deg, #fefbf6 0%, var(--cream) 100%);
             line-height: 1.6;
         }
         h1, h2, h3, .font-display { font-family: 'Cormorant Garamond', serif; }
 
         /* Nav */
         .site-nav {
-            background: linear-gradient(180deg, #352510 0%, var(--wood-dark) 100%);
+            background: linear-gradient(180deg, #6b4326 0%, var(--wood-dark) 100%);
             color: var(--gold-pale);
             padding: 0.75rem 1.5rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 16px rgba(61,41,20,0.25);
-            border-bottom: 1px solid rgba(212,175,55,0.15);
+            box-shadow: 0 2px 16px rgba(90,55,35,0.25);
+            border-bottom: 1px solid rgba(231,190,90,0.35);
         }
         .nav-inner {
             max-width: 1200px;
@@ -102,11 +103,11 @@
 
         /* Footer */
         .site-footer {
-            background: linear-gradient(180deg, var(--wood-dark) 0%, #2a1c0e 100%);
+            background: linear-gradient(180deg, #6b4326 0%, var(--wood-dark) 100%);
             color: var(--gold-pale);
             padding: 2.5rem 1.5rem 1.5rem;
             margin-top: 4rem;
-            border-top: 1px solid rgba(212,175,55,0.12);
+            border-top: 1px solid rgba(231,190,90,0.35);
         }
         .footer-inner {
             max-width: 1200px;

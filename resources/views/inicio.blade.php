@@ -5,17 +5,17 @@
 @push('styles')
 <style>
     .hero {
-        background: linear-gradient(120deg, rgba(61,41,20,0.85) 0%, rgba(92,64,51,0.75) 50%), url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=80') center/cover no-repeat;
+        background: linear-gradient(120deg, rgba(74,48,32,0.88) 0%, rgba(125,94,69,0.78) 50%), url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=80') center/cover no-repeat;
         min-height: 75vh;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: #faf6f0;
+        color: var(--cream);
         padding: 3rem 1.5rem;
     }
     .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.2); }
-    .hero .gold { color: #d4af37; }
+    .hero .gold { color: var(--gold-light); }
     .hero p { font-size: 1.15rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; opacity: 0.95; }
     .hero p::after { content: ''; display: block; width: 40px; height: 2px; background: rgba(212,175,55,0.6); margin: 1.25rem auto 0; }
     .hero .btn { margin: 0 0.4rem; }
@@ -32,11 +32,11 @@
         background: #fff;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(61,41,20,0.08);
+        box-shadow: 0 4px 20px rgba(74,48,32,0.08);
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         border: 1px solid transparent;
     }
-    .destacado-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(61,41,20,0.12); border-color: rgba(212,175,55,0.25); }
+    .destacado-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(74,48,32,0.12); border-color: rgba(212,168,74,0.3); }
     .destacado-card img {
         width: 100%;
         height: 200px;
@@ -90,7 +90,7 @@
             <h1>Bienvenidos a <span class="gold">Pikaditos</span></h1>
             <p>Comida rápida con sabor casero. Ingredientes frescos, preparaciones que nos distinguen y un servicio que te hace sentir en casa.</p>
             <a href="{{ route('menu') }}" class="btn btn-primary">Ver menú</a>
-            <a href="{{ route('contacto') }}" class="btn btn-outline" style="color:#f4e4bc;border-color:#d4af37;">Contacto</a>
+            <a href="{{ route('contacto') }}" class="btn btn-outline" style="color:var(--gold-pale);border-color:var(--gold-light);">Contacto</a>
         </div>
     </section>
 
