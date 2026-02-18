@@ -32,12 +32,13 @@
         display: flex;
         flex-direction: column;
         background: #fff;
-        border-radius: 8px;
+        border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 2px 12px rgba(61,41,20,0.06);
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        border: 1px solid rgba(92,64,51,0.06);
     }
-    .menu-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(61,41,20,0.1); }
+    .menu-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,41,20,0.1); border-color: rgba(212,175,55,0.2); }
     .menu-card img {
         width: 100%;
         height: 180px;
@@ -56,16 +57,16 @@
     .menu-card .foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; flex-shrink: 0; padding-top: 0.25rem; }
     .menu-card .price { font-weight: 700; color: var(--gold); }
     .menu-card .btn-pedir {
-        background: var(--wood-dark);
+        background: linear-gradient(180deg, var(--wood-dark) 0%, var(--wood) 100%);
         color: var(--gold-pale);
         padding: 0.4rem 1rem;
-        border-radius: 4px;
+        border-radius: 6px;
         text-decoration: none;
         font-size: 0.85rem;
         font-weight: 600;
-        transition: background 0.2s;
+        transition: background 0.25s ease, box-shadow 0.25s ease;
     }
-    .menu-card .btn-pedir:hover { background: var(--wood); }
+    .menu-card .btn-pedir:hover { background: var(--wood); box-shadow: 0 2px 10px rgba(61,41,20,0.25); }
     .menu-card .btn-pedir { min-height: 44px; display: inline-flex; align-items: center; }
 
     @media (max-width: 768px) {

@@ -14,9 +14,10 @@
         color: #faf6f0;
         padding: 3rem 1.5rem;
     }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.02em; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.2); }
     .hero .gold { color: #d4af37; }
     .hero p { font-size: 1.15rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; opacity: 0.95; }
+    .hero p::after { content: ''; display: block; width: 40px; height: 2px; background: rgba(212,175,55,0.6); margin: 1.25rem auto 0; }
     .hero .btn { margin: 0 0.4rem; }
 
     .section { padding: 4rem 0; }
@@ -29,12 +30,13 @@
     }
     .destacado-card {
         background: #fff;
-        border-radius: 8px;
+        border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(61,41,20,0.08);
-        transition: transform 0.25s, box-shadow 0.25s;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        border: 1px solid transparent;
     }
-    .destacado-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(61,41,20,0.12); }
+    .destacado-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(61,41,20,0.12); border-color: rgba(212,175,55,0.25); }
     .destacado-card img {
         width: 100%;
         height: 200px;
@@ -50,7 +52,9 @@
         color: var(--gold-pale);
         text-align: center;
         padding: 3.5rem 1.5rem;
+        position: relative;
     }
+    .cta-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent); }
     .cta-block h2 { font-size: 1.9rem; margin-bottom: 0.5rem; }
     .cta-block p { margin-bottom: 1.5rem; opacity: 0.9; }
     .cta-block .btn-primary { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%); color: var(--wood-dark); }

@@ -40,7 +40,7 @@
         .map-wrap iframe { height: 220px; }
     }
 
-    .contact-info { background: var(--wood-bg); padding: 1.5rem; border-radius: 8px; }
+    .contact-info { background: var(--wood-bg); padding: 1.5rem; border-radius: 10px; border-left: 3px solid var(--gold); }
     .contact-info h3 { font-family: 'Cormorant Garamond', serif; color: var(--wood-dark); margin-bottom: 1rem; font-size: 1.35rem; }
     .contact-info p { margin-bottom: 0.5rem; color: var(--text); }
     .contact-info a { color: var(--gold); font-weight: 500; text-decoration: none; }
@@ -51,8 +51,9 @@
     .form-box {
         background: #fff;
         padding: 2rem;
-        border-radius: 8px;
+        border-radius: 10px;
         box-shadow: 0 4px 20px rgba(61,41,20,0.08);
+        border: 1px solid rgba(212,175,55,0.1);
     }
     .form-box h3 { font-family: 'Cormorant Garamond', serif; color: var(--wood-dark); margin-bottom: 1.25rem; font-size: 1.35rem; }
     .form-group { margin-bottom: 1.25rem; }
@@ -62,9 +63,10 @@
         width: 100%;
         padding: 0.65rem 0.85rem;
         border: 1px solid #d4c4b0;
-        border-radius: 4px;
+        border-radius: 6px;
         font-family: inherit;
         font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .form-group input:focus,
     .form-group textarea:focus {
@@ -80,11 +82,12 @@
         padding: 0.75rem 1.75rem;
         font-weight: 600;
         font-size: 1rem;
-        border-radius: 4px;
+        border-radius: 6px;
         cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 2px 8px rgba(184,134,11,0.2);
     }
-    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(184,134,11,0.35); }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(184,134,11,0.35); }
 
     .alert { padding: 1rem 1.25rem; border-radius: 4px; margin-bottom: 1.5rem; }
     .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
