@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\MenuData;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,7 +14,16 @@ class PageController extends Controller
 
     public function menu()
     {
-        return view('menu');
+        return view('menu', ['secciones' => MenuData::secciones()]);
+    }
+
+    public function menuSeccion(string $slug)
+    {
+        $seccion = MenuData::getSeccion($slug);
+        if (!$seccion) {
+            abort(404);
+        }
+        return view('menu-seccion', $seccion);
     }
 
     public function contacto()

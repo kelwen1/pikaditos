@@ -2,158 +2,100 @@
 
 @section('title', 'Inicio')
 
-@push('styles')
-<style>
-    .hero {
-        background: linear-gradient(120deg, rgba(74,48,32,0.88) 0%, rgba(125,94,69,0.78) 50%), url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=80') center/cover no-repeat;
-        min-height: 75vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: var(--cream);
-        padding: 3rem 1.5rem;
-    }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.2); }
-    .hero .gold { color: var(--gold-light); }
-    .hero p { font-size: 1.15rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; opacity: 0.95; }
-    .hero p::after { content: ''; display: block; width: 40px; height: 2px; background: rgba(212,175,55,0.6); margin: 1.25rem auto 0; }
-    .hero .btn { margin: 0 0.4rem; }
-
-    .section { padding: 4rem 0; }
-    .section-alt { background: var(--wood-bg); }
-    .destacados-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-    .destacado-card {
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(74,48,32,0.08);
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        border: 1px solid transparent;
-    }
-    .destacado-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(74,48,32,0.12); border-color: rgba(212,168,74,0.3); }
-    .destacado-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-    .destacado-card .body { padding: 1.5rem; }
-    .destacado-card h3 { font-family: 'Cormorant Garamond', serif; color: var(--wood-dark); margin-bottom: 0.5rem; font-size: 1.35rem; }
-    .destacado-card p { color: var(--text-muted); font-size: 0.95rem; }
-    .destacado-card .precio { color: var(--gold); font-weight: 700; margin-top: 0.75rem; }
-
-    .cta-block {
-        background: linear-gradient(135deg, var(--wood-dark) 0%, var(--wood) 100%);
-        color: var(--gold-pale);
-        text-align: center;
-        padding: 3.5rem 1.5rem;
-        position: relative;
-    }
-    .cta-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent); }
-    .cta-block h2 { font-size: 1.9rem; margin-bottom: 0.5rem; }
-    .cta-block p { margin-bottom: 1.5rem; opacity: 0.9; }
-    .cta-block .btn-primary { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%); color: var(--wood-dark); }
-
-    @media (max-width: 768px) {
-        .hero { min-height: 65vh; padding: 2.5rem 1.25rem; }
-        .hero p { font-size: 1.05rem; }
-        .hero .btn { margin: 0.35rem; }
-        .section { padding: 3rem 0; }
-        .destacados-grid { gap: 1.5rem; margin-top: 1.5rem; }
-        .destacado-card .body { padding: 1.25rem; }
-        .cta-block { padding: 2.5rem 1.25rem; }
-        .cta-block h2 { font-size: 1.6rem; }
-    }
-    @media (max-width: 480px) {
-        .hero { min-height: 60vh; padding: 2rem 1rem; }
-        .hero h1 { font-size: 1.85rem; }
-        .hero p { font-size: 1rem; margin-bottom: 1.5rem; }
-        .hero .btn { display: inline-block; margin: 0.4rem 0.25rem; min-height: 44px; line-height: 44px; padding-top: 0; padding-bottom: 0; }
-        .section { padding: 2.5rem 0; }
-        .destacados-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-        .section-title { font-size: 1.65rem; }
-        .cta-block { padding: 2rem 1rem; }
-        .cta-block h2 { font-size: 1.45rem; }
-        .cta-block .btn-primary { min-height: 44px; padding: 0.65rem 1.25rem; }
-    }
-</style>
-@endpush
-
 @section('content')
-    <section class="hero">
-        <div>
-            <h1>Bienvenidos a <span class="gold">Pikaditos</span></h1>
-            <p>Comida rápida con sabor casero. Ingredientes frescos, preparaciones que nos distinguen y un servicio que te hace sentir en casa.</p>
-            <a href="{{ route('menu') }}" class="btn btn-primary">Ver menú</a>
-            <a href="{{ route('contacto') }}" class="btn btn-outline" style="color:var(--gold-pale);border-color:var(--gold-light);">Contacto</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Lo más <span>pedido</span></h2>
-            <div class="destacados-grid">
-                <article class="destacado-card">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Hamburguesa clásica">
-                    <div class="body">
-                        <h3>Hamburguesa Pikaditos</h3>
-                        <p>Carne 100% res, queso, lechuga, tomate y nuestra salsa especial.</p>
-                        <p class="precio">$18.000</p>
-                    </div>
-                </article>
-                <article class="destacado-card">
-                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&q=80" alt="Sándwich">
-                    <div class="body">
-                        <h3>Sándwich del día</h3>
-                        <p>Pollo o carne, tocineta, queso y pan tostado. Sencillo y delicioso.</p>
-                        <p class="precio">$15.500</p>
-                    </div>
-                </article>
-                <article class="destacado-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="Ensalada">
-                    <div class="body">
-                        <h3>Ensalada fresca</h3>
-                        <p>Mix de verduras, pollo grillé y aderezo a elección. Opción ligera y sabrosa.</p>
-                        <p class="precio">$14.000</p>
-                    </div>
-                </article>
+    {{-- Hero estilo McDonald's: imagen grande + CTA --}}
+    <section class="relative h-[70vh] min-h-[400px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=85" alt="Comida Pikaditos" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-wood-dark/85 via-wood-dark/50 to-transparent"></div>
+        <div class="relative h-full max-w-6xl mx-auto px-4 flex items-center">
+            <div class="max-w-xl">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 leading-tight">Rico, rápido y a tu casa</h1>
+                <p class="text-lg text-white/95 mb-8">Hamburguesas, picadas, cócteles y más. Pide por WhatsApp y te lo llevamos.</p>
+                <a href="https://wa.me/573172479723?text=Hola%20Pikaditos,%20quiero%20ordenar" class="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] text-white font-bold rounded-full text-lg hover:bg-[#20BD5A] transition-colors" target="_blank" rel="noopener">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16"><path d="M13.6 2.3A7.9 7.9 0 0 0 8 0C3.6 0 .06 3.6.06 7.9c0 1.4.4 2.8 1 4L0 16l4.2-1.1a7.9 7.9 0 0 0 3.8 1h.004c4.4 0 7.9-3.6 7.9-7.9a7.9 7.9 0 0 0-2.3-5.6z"/></svg>
+                    Ordenar por WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">¿Por qué <span>Pikaditos</span>?</h2>
-            <div class="destacados-grid" style="max-width: 900px; margin: 0 auto;">
-                <div style="text-align: center;">
-                    <p style="font-size: 2rem; margin-bottom: 0.5rem;">🍔</p>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; color: var(--wood-dark);">Rápido y fresco</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Preparamos tu pedido al momento, con ingredientes de calidad.</p>
+    {{-- Populares --}}
+    <section class="py-16 bg-wood-bg">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-ink mb-2">Lo más pedido</h2>
+            <p class="text-muted mb-10">Los favoritos de nuestros clientes</p>
+            <div class="grid sm:grid-cols-3 gap-6">
+                <a href="https://wa.me/573172479723?text=Hola,%20quiero%20una%20Hamburguesa%20PK" class="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-wood/10" target="_blank" rel="noopener">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85" alt="Hamburguesa PK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-ink text-lg">Hamburguesa PK</h3>
+                        <p class="text-muted text-sm mt-1">Carne, lechuga, tomate, brevas, papas</p>
+                        <p class="text-gold font-bold text-lg mt-3">$22.000</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/573172479723?text=Hola,%20quiero%20Fusión%20PK" class="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-wood/10" target="_blank" rel="noopener">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=85" alt="Fusión PK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-ink text-lg">Fusión PK</h3>
+                        <p class="text-muted text-sm mt-1">Desmechada, butifarra, salchicha, pollo, queso</p>
+                        <p class="text-gold font-bold text-lg mt-3">$25.000</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/573172479723?text=Hola,%20quiero%20Piña%20Colada" class="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-wood/10" target="_blank" rel="noopener">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=85" alt="Piña Colada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-ink text-lg">Piña Colada</h3>
+                        <p class="text-muted text-sm mt-1">Ron, piña, crema de coco</p>
+                        <p class="text-gold font-bold text-lg mt-3">$16.000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center mt-10">
+                <a href="{{ route('menu') }}" class="inline-block px-8 py-3 bg-gold text-black font-semibold rounded-full hover:bg-gold-light transition-colors">Ver todo el menú</a>
+            </div>
+        </div>
+    </section>
+
+    {{-- Por qué Pikaditos --}}
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-ink mb-2">¿Por qué Pikaditos?</h2>
+            <p class="text-muted mb-12">Simple, rápido y delicioso</p>
+            <div class="grid sm:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">🍔</div>
+                    <h3 class="font-bold text-ink">Rápido y fresco</h3>
+                    <p class="text-muted text-sm mt-1">Preparamos tu pedido al momento</p>
                 </div>
-                <div style="text-align: center;">
-                    <p style="font-size: 2rem; margin-bottom: 0.5rem;">🏠</p>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; color: var(--wood-dark);">Delivery</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Llevamos tu comida hasta la puerta de tu casa.</p>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">🚗</div>
+                    <h3 class="font-bold text-ink">Delivery</h3>
+                    <p class="text-muted text-sm mt-1">Te llevamos hasta la puerta</p>
                 </div>
-                <div style="text-align: center;">
-                    <p style="font-size: 2rem; margin-bottom: 0.5rem;">💬</p>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; color: var(--wood-dark);">Pedidos por WhatsApp</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Ordena fácil por WhatsApp y listamos tu pedido.</p>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">💬</div>
+                    <h3 class="font-bold text-ink">Ordena por WhatsApp</h3>
+                    <p class="text-muted text-sm mt-1">Fácil y sin complicaciones</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-block">
-        <div class="container">
-            <h2>¿Listo para pedir?</h2>
-            <p>Revisa nuestro menú y escríbenos por WhatsApp para tu pedido.</p>
-            <a href="{{ route('menu') }}" class="btn btn-primary">Ver menú completo</a>
+    {{-- CTA final --}}
+    <section class="py-16 bg-black">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-2">¿Listo para pedir?</h2>
+            <p class="text-white/90 mb-8">Escríbenos por WhatsApp y en minutos está listo</p>
+            <a href="https://wa.me/573172479723?text=Hola%20Pikaditos,%20quiero%20ordenar" class="inline-flex items-center gap-2 px-10 py-4 bg-gold text-black font-bold rounded-full text-lg hover:bg-gold-light transition-colors" target="_blank" rel="noopener">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16"><path d="M13.6 2.3A7.9 7.9 0 0 0 8 0C3.6 0 .06 3.6.06 7.9c0 1.4.4 2.8 1 4L0 16l4.2-1.1a7.9 7.9 0 0 0 3.8 1h.004c4.4 0 7.9-3.6 7.9-7.9a7.9 7.9 0 0 0-2.3-5.6z"/></svg>
+                Ordenar ahora
+            </a>
         </div>
     </section>
 @endsection

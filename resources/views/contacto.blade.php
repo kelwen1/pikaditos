@@ -2,171 +2,63 @@
 
 @section('title', 'Contacto')
 
-@push('styles')
-<style>
-    .contact-hero {
-        background: linear-gradient(120deg, rgba(74,48,32,0.88) 0%, rgba(125,94,69,0.82) 100%), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
-        padding: 2.5rem 1.5rem;
-        text-align: center;
-        color: var(--cream);
-    }
-    .contact-hero h1 { font-size: 2.25rem; margin-bottom: 0.5rem; }
-    .contact-hero p { opacity: 0.9; }
-
-    .contact-wrap { padding: 3rem 0 4rem; }
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        align-items: start;
-    }
-    @media (max-width: 768px) {
-        .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-        .contact-hero { padding: 2rem 1.25rem; }
-        .contact-hero h1 { font-size: 1.9rem; }
-        .contact-wrap { padding: 2rem 0 3rem; }
-        .form-box { padding: 1.5rem; }
-        .map-wrap iframe { height: 250px; }
-    }
-    @media (max-width: 480px) {
-        .contact-hero { padding: 1.5rem 1rem; }
-        .contact-hero h1 { font-size: 1.65rem; }
-        .contact-wrap { padding: 1.5rem 0 2.5rem; }
-        .contact-info { padding: 1.25rem; }
-        .form-box { padding: 1.25rem; }
-        .form-group { margin-bottom: 1rem; }
-        .btn-submit { min-height: 44px; padding: 0.75rem 1.5rem; width: 100%; }
-        .map-wrap { margin-top: 1.5rem; }
-        .map-wrap iframe { height: 220px; }
-    }
-
-    .contact-info { background: var(--wood-bg); padding: 1.5rem; border-radius: 10px; border-left: 3px solid var(--gold); }
-    .contact-info h3 { font-family: 'Cormorant Garamond', serif; color: var(--wood-dark); margin-bottom: 1rem; font-size: 1.35rem; }
-    .contact-info p { margin-bottom: 0.5rem; color: var(--text); }
-    .contact-info a { color: var(--gold); font-weight: 500; text-decoration: none; }
-    .contact-info a:hover { text-decoration: underline; }
-    .horarios { margin-top: 1.5rem; }
-    .horarios li { list-style: none; padding: 0.25rem 0; color: var(--text-muted); }
-
-    .form-box {
-        background: #fff;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(74,48,32,0.08);
-        border: 1px solid rgba(212,168,74,0.12);
-    }
-    .form-box h3 { font-family: 'Cormorant Garamond', serif; color: var(--wood-dark); margin-bottom: 1.25rem; font-size: 1.35rem; }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--wood-dark); }
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 0.65rem 0.85rem;
-        border: 1px solid #d4c4b0;
-        border-radius: 6px;
-        font-family: inherit;
-        font-size: 1rem;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: var(--gold);
-        box-shadow: 0 0 0 2px rgba(184,134,11,0.2);
-    }
-    .form-group textarea { min-height: 120px; resize: vertical; }
-    .btn-submit {
-        background: linear-gradient(135deg, var(--gold) 0%, var(--wood-light) 100%);
-        color: var(--wood-dark);
-        border: none;
-        padding: 0.75rem 1.75rem;
-        font-weight: 600;
-        font-size: 1rem;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        box-shadow: 0 2px 8px rgba(184,134,11,0.2);
-    }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(184,134,11,0.35); }
-
-    .alert { padding: 1rem 1.25rem; border-radius: 4px; margin-bottom: 1.5rem; }
-    .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-    .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-
-    .map-wrap {
-        margin-top: 2rem;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(74,48,32,0.08);
-    }
-    .map-wrap iframe { width: 100%; height: 280px; border: 0; display: block; }
-</style>
-@endpush
-
 @section('content')
-    <section class="contact-hero">
-        <div class="container">
-            <h1>Contacto</h1>
-            <p>¿Dudas, pedidos o sugerencias? Estamos para atenderte.</p>
+    <section class="bg-black text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-2xl sm:text-3xl font-bold">Contacto</h1>
+            <p class="text-white/80 mt-1">¿Dudas? Escríbenos</p>
         </div>
     </section>
 
-    <div class="container contact-wrap">
+    <div class="max-w-6xl mx-auto px-4 py-12">
         @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="mb-6 p-4 bg-green-100 text-green-800 rounded-xl">{{ session('success') }}</div>
         @endif
         @if($errors->any())
-            <div class="alert alert-error">
-                <ul style="margin: 0; padding-left: 1.2rem;">
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            <div class="mb-6 p-4 bg-red-50 text-red-700 rounded-xl">
+                <ul class="list-disc list-inside">@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul>
             </div>
         @endif
 
-        <div class="contact-grid">
+        <div class="grid lg:grid-cols-2 gap-12">
             <div>
-                <div class="contact-info">
-                    <h3>Dónde estamos</h3>
-                    <p><strong>Dirección:</strong> Calle Ejemplo 123, Local 4</p>
-                    <p><strong>Teléfono:</strong> <a href="tel:+573172479723">3172479723</a></p>
-                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/573172479723" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
-                    <div class="horarios">
-                        <h3 style="margin-bottom: 0.5rem;">Horarios</h3>
-                        <ul>
-                            <li>Lunes a Viernes: 4:00 AM - 12:00 AM</li>
-                            <li>Sábados y Domingos: 3:00 PM - 12:00 AM</li>
-                        </ul>
-                    </div>
+                <div class="bg-wood-bg rounded-2xl p-6 mb-6 border border-wood/10">
+                    <h2 class="font-bold text-ink mb-4">Dónde estamos</h2>
+                    <p class="text-muted">Calle Ejemplo 123, Local 4</p>
+                    <p class="text-muted mt-1"><a href="tel:+573172479723" class="text-gold font-medium hover:text-gold-light">317 247 9723</a></p>
+                    <a href="https://wa.me/573172479723" class="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-[#25D366] text-white font-medium rounded-full hover:bg-[#20BD5A] transition-colors" target="_blank" rel="noopener">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M13.6 2.3A7.9 7.9 0 0 0 8 0C3.6 0 .06 3.6.06 7.9z"/></svg>
+                        WhatsApp
+                    </a>
                 </div>
-
-                <div class="map-wrap">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.289850779!2d-74.072249!3d4.710989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f85b2c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sBogot%C3%A1!5e0!3m2!1ses!2sco!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Pikaditos"></iframe>
+                <div class="text-sm text-muted">
+                    <p class="font-medium text-ink">Horarios</p>
+                    <p>Lun–Vie: 4pm – 12am</p>
+                    <p>Sáb–Dom: 3pm – 12am</p>
                 </div>
             </div>
 
-            <div class="form-box">
-                <h3>Envíanos un mensaje</h3>
-                <form action="{{ route('contacto.enviar') }}" method="POST">
+            <div class="bg-white rounded-2xl border border-wood/20 p-6 shadow-sm">
+                <h2 class="font-bold text-ink mb-4">Envíanos un mensaje</h2>
+                <form action="{{ route('contacto.enviar') }}" method="POST" class="space-y-4">
                     @csrf
-                    <div class="form-group">
-                        <label for="nombre">Nombre *</label>
-                        <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" required>
+                    <div>
+                        <label class="block text-sm font-medium text-ink mb-1">Nombre *</label>
+                        <input type="text" name="nombre" value="{{ old('nombre') }}" required class="w-full px-4 py-2 border border-wood/30 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Correo *</label>
-                        <input type="email" id="email" name="email" value="{{ old('email') }}" required>
+                    <div>
+                        <label class="block text-sm font-medium text-ink mb-1">Correo *</label>
+                        <input type="email" name="email" value="{{ old('email') }}" required class="w-full px-4 py-2 border border-wood/30 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold">
                     </div>
-                    <div class="form-group">
-                        <label for="asunto">Asunto</label>
-                        <input type="text" id="asunto" name="asunto" value="{{ old('asunto') }}" placeholder="Ej: Pedido, consulta...">
+                    <div>
+                        <label class="block text-sm font-medium text-ink mb-1">Asunto</label>
+                        <input type="text" name="asunto" value="{{ old('asunto') }}" placeholder="Ej: Pedido, consulta" class="w-full px-4 py-2 border border-wood/30 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold">
                     </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" required>{{ old('mensaje') }}</textarea>
+                    <div>
+                        <label class="block text-sm font-medium text-ink mb-1">Mensaje *</label>
+                        <textarea name="mensaje" rows="4" required class="w-full px-4 py-2 border border-wood/30 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold">{{ old('mensaje') }}</textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Enviar mensaje</button>
+                    <button type="submit" class="w-full py-3 bg-gold text-black font-semibold rounded-lg hover:bg-gold-light transition-colors">Enviar</button>
                 </form>
             </div>
         </div>
